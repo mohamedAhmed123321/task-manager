@@ -1,0 +1,29 @@
+.task-list {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-list ul {
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-list li:last-child {
+  border-bottom: none;
+}
+
+.task-list h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #444;
+}

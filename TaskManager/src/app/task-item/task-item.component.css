@@ -1,0 +1,78 @@
+.task-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4; /* Light background */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.button-container{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+.task-item.completed {
+  text-decoration: line-through;
+  color: #a3a3a3; /* Grey for completed tasks */
+}
+
+/* Separate task title from buttons */
+.task-item span {
+    text-align: left;/* Adds spacing between text and buttons */
+  flex: 1; /* Allows the span to take up available space */
+}
+
+/* Button styles */
+.task-item button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+/* Remove Button (Red) */
+button.remove-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+button.remove-btn:hover {
+  background-color: #e60000;
+}
+
+/* Complete Button (Blue) */
+button.complete-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+button.complete-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Undo Button (Orange) */
+button.undo-btn {
+  background-color: #ff9500;
+  color: white;
+}
+
+button.undo-btn:hover {
+  background-color: #cc7a00;
+}
+
+/* Focus styles for accessibility */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.5); /* Orange focus ring */
+}
+
+/* Additional margin for buttons to create separation */
+.task-item button {
+  margin-left: 10px; /* Adds spacing between buttons */
+}

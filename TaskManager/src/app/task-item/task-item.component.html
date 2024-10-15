@@ -1,0 +1,14 @@
+<div class="task-item" [ngClass]="{ completed: task.completed }">
+  <span>{{ task.title }}</span>
+  <div class="button-container">
+    <button *ngIf="!task.completed" class="complete-btn" (click)="onComplete()">
+      Complete
+    </button>
+
+    <button *ngIf="task.completed" class="undo-btn" (click)="onComplete()">
+      Undo
+    </button>
+
+    <button class="remove-btn" (click)="onRemove()">Remove</button>
+  </div>
+</div>
