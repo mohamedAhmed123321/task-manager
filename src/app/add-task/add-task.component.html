@@ -1,0 +1,24 @@
+<div class="task-container">
+  <h2>Task Manager</h2>
+
+  <!-- Task Form -->
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <input
+      type="text"
+      formControlName="title"
+      placeholder="Add a new task"
+      class="task-input"
+    />
+    <button type="submit" class="task-btn" [disabled]="!taskForm.valid">
+      Add Task
+    </button>
+  </form>
+
+  <!-- Task List Component -->
+  <app-task-list
+    [tasks]="tasks"
+    (completeTask)="onCompleteTask($event)"
+    (removeTask)="onRemoveTask($event)"
+  >
+  </app-task-list>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Task Manager</h1>
+  <div class="input-container">
+    <input [(ngModel)]="newTaskTitle" placeholder="Enter new task" />
+    <button (click)="addTask()">Add Task</button>
+  </div>
+  <h2>Incomplete Tasks</h2>
+  <ul class="task-list">
+    <li *ngFor="let task of incompleteTasks" class="task-item">
+      <span>{{ task.title }}</span>
+      <div>
+        <button class="complete-btn" (click)="toggleTaskCompletion(task.id)">
+          Complete
+        </button>
+        <button class="remove-btn" (click)="removeTask(task.id)">Remove</button>
+      </div>
+    </li>
+  </ul>
+  <h2>Completed Tasks</h2>
+  <ul class="task-list">
+    <li *ngFor="let task of completedTasks" class="task-item completed">
+      <span>{{ task.title }}</span>
+      <div>
+        <button class="remove-btn" (click)="removeTask(task.id)">Remove</button>
+      </div>
+    </li>
+  </ul>
+</div>

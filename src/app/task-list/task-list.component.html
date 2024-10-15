@@ -1,0 +1,27 @@
+<div *ngIf="tasks.length > 0">
+  <!-- Incomplete Tasks -->
+  <h3>Incomplete Tasks</h3>
+  <ul>
+    <li
+      *ngFor="let task of tasks"
+      [ngClass]="{ completed: task.completed === true }"
+    >
+      {{ task.title }}
+      <button (click)="onCompleteTask(task.id)" *ngIf="!task.completed">
+        Mark as Complete
+      </button>
+      <button (click)="onRemoveTask(task.id)">Remove</button>
+    </li>
+  </ul>
+
+  <!-- Completed Tasks -->
+  <h3>Completed Tasks</h3>
+  <ul>
+    <ng-container *ngFor="let task of tasks">
+      <!-- Move *ngIf to ng-container or parent element -->
+      <li *ngIf="task.completed" class="completed">
+        {{ task.title }}
+      </li>
+    </ng-container>
+  </ul>
+</div>
